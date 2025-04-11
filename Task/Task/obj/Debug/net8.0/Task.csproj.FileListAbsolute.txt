@@ -12,3 +12,4 @@ C:\Users\Turan Salimli\Desktop\ReflectionTask\Task\Task\obj\Debug\net8.0\refint\
 C:\Users\Turan Salimli\Desktop\ReflectionTask\Task\Task\obj\Debug\net8.0\Task.pdb
 C:\Users\Turan Salimli\Desktop\ReflectionTask\Task\Task\obj\Debug\net8.0\Task.genruntimeconfig.cache
 C:\Users\Turan Salimli\Desktop\ReflectionTask\Task\Task\obj\Debug\net8.0\ref\Task.dll
+C:\Users\Turan Salimli\Desktop\ReflectionTask\Task\Task\obj\Debug\net8.0\Task.sourcelink.json

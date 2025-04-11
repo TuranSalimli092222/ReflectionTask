@@ -12,11 +12,7 @@ class Program
         Assembly asm = Assembly.GetExecutingAssembly();
         Type userType = asm.GetTypes().FirstOrDefault(t => t.Name == "User");
 
-        if (userType == null)
-        {
-            Console.WriteLine("User tipi tapılmadı.");
-            return;
-        }
+
 
         object userInstance = Activator.CreateInstance(userType);
 
@@ -28,21 +24,20 @@ class Program
         idField.SetValue(userInstance, 1);
         nameField.SetValue(userInstance, "Turan");
         surnameField.SetValue(userInstance, "Developer");
-        ageField.SetValue(null, 20);
+        ageField.SetValue(userInstance, 20);
 
         Console.WriteLine($"id: {idField.GetValue(userInstance)}");
         Console.WriteLine($"name: {nameField.GetValue(userInstance)}");
         Console.WriteLine($"surname: {surnameField.GetValue(userInstance)}");
-        Console.WriteLine($"age: {ageField.GetValue(null)}");
+        Console.WriteLine($"age: {ageField.GetValue(userInstance)}");
 
         MethodInfo getFullNameMethod = userType.GetMethod("GetFullName", BindingFlags.Public | BindingFlags.Instance);
         getFullNameMethod.Invoke(userInstance, null);
 
         MethodInfo changeAgeMethod = userType.GetMethod("ChangeAge", BindingFlags.Public | BindingFlags.Static);
-        changeAgeMethod.Invoke(null, new object[] { 25 });
+        changeAgeMethod.Invoke(userInstance, [25]);
 
-        MethodInfo showAgeMethod = userType.GetMethod("ShowAge", BindingFlags.Public | BindingFlags.Static);
-        
+        Console.WriteLine($"age: {ageField.GetValue(userInstance)}");
     }
 }
 
